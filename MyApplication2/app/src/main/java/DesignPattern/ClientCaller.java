@@ -1,5 +1,8 @@
 package DesignPattern;
 
+import DesignPattern.abstractfactory.AbstractFactory;
+import DesignPattern.abstractfactory.Archi;
+import DesignPattern.abstractfactory.CPU;
 import DesignPattern.factorymethod.Factory;
 import DesignPattern.objectpool.DummyObject;
 import DesignPattern.objectpool.ObjectPool;
@@ -17,6 +20,9 @@ public class ClientCaller {
         Factory.use("factory.gif");
         Prototype proto = new Prototype();
         Log.i("Outcome", proto.getPrototype("tom").toString());
+
+        AbstractFactory factory = AbstractFactory.getFactory(Archi.EMBER);
+        CPU cpu = factory.createCPU();
     }
 
 }
