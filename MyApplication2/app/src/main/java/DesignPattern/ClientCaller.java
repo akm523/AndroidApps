@@ -3,9 +3,13 @@ package DesignPattern;
 import DesignPattern.abstractfactory.AbstractFactory;
 import DesignPattern.abstractfactory.Archi;
 import DesignPattern.abstractfactory.CPU;
+import DesignPattern.adapter.AdapterDemoSquarePeg;
+import DesignPattern.builder.PizzaDemo;
+import DesignPattern.chainduity.ChainDemo;
 import DesignPattern.factorymethod.Factory;
 import DesignPattern.objectpool.DummyObject;
 import DesignPattern.objectpool.ObjectPool;
+import DesignPattern.observer.ObservserDemo;
 import DesignPattern.prototype.Prototype;
 import android.util.Log;
 
@@ -23,6 +27,12 @@ public class ClientCaller {
 
         AbstractFactory factory = AbstractFactory.getFactory(Archi.EMBER);
         CPU cpu = factory.createCPU();
+
+        PizzaDemo.buildPizza();
+
+        AdapterDemoSquarePeg.adapterCall();
+        ObservserDemo.observerTest();
+        ChainDemo.callDemo();
     }
 
 }
